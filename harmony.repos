@@ -1,0 +1,13 @@
+repositories:
+  obstacle_detector:
+    type: git
+    url: https://github.com/jk-ethz/obstacle_detector
+    version: development
+
+  iris_lama:
+    type: git
+    url: https://github.com/iris-ua/iris_lama
+
+  iris_lama_ros:
+    type: git
+    url: https://github.com/iris-ua/iris_lama_ros
