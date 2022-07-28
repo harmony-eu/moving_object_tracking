@@ -50,6 +50,7 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>obstacle_detector</exec_depend>
+  <exec_depend>laser_static_map_filter</exec_depend>
   <exec_depend>hector_mapping</exec_depend>
   <exec_depend>map_server</exec_depend>
   <exec_depend>iris_lama_ros</exec_depend>
