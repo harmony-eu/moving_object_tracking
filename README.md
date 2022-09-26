@@ -2,6 +2,12 @@
 
 The harmony package developed for dynamic obstacle velocity estimation.
 
+## Installation
+
+- Run `rosdep update`
+- Run `sudo apt install python3-vcstool`
+- Run `vcs import --recursive --input harmony.repos`
+
 ## Usage
 
 - Create a map using `mapping.launch`
