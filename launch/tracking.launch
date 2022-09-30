@@ -11,14 +11,22 @@
 
   <node name="laser_static_map_filter" pkg="laser_static_map_filter" type="laser_static_map_filter.py" output="screen">
       <remap from="/map" to="/map_inflated"/>
-      <remap from="/scan" to="/pcl"/>
+      <!-- <remap from="/scan" to="/pcl"/> -->
+      <remap from="/scan" to="/scan_merged_pcl"/>
   </node>
 
-  <node name="scans_merger" pkg="nodelet" type="nodelet" args="load obstacle_detector/ScansMerger $(arg manager)">
-    <remap from="/front_scan" to="/front/scan" />
-    <remap from="/rear_scan" to="/rear/scan" />
+<!-- the laser_static_map_filter requires PointCloud2 as input, while the scan_merged is of type PointCloud -->
+  <node name="pointcloud_converter" type="point_cloud_converter_node" pkg="point_cloud_converter">
+      <remap from="points2_in" to="/ScanMergeNode/scan_merged" />
+      <remap from="points_out" to="/scan_merged_pcl" />
+  </node>
+
+  <!-- <node name="scans_merger" pkg="nodelet" type="nodelet" args="load obstacle_detector/ScansMerger $(arg manager)">
+    <remap from="/front_scan" to="/myumi_005/front/scan" />
+    <remap from="/rear_scan" to="/myumi_005/rear/scan" />
+  
     <param name="active"            value="true"/>
-    <param name="publish_scan"      value="true"/>
+    <param name="publish_scan"      value="false"/>
     <param name="publish_pcl"       value="true"/>
 
     <param name="ranges_num"        value="1000"/>
@@ -33,10 +41,10 @@
 
     <param name="fixed_frame_id"   value="map"/>
     <param name="target_frame_id"   value="map"/>
-  </node>
+  </node> -->
 
   <node name="obstacle_extractor" pkg="nodelet" type="nodelet" args="load obstacle_detector/ObstacleExtractor $(arg manager)">
-    <!-- <remap from="/scan" to="/merged_scan" /> -->
+    <remap from="/scan" to="/myumi_005/front/scan" />
     <remap from="/pcl" to="/scan_filtered" />
     <param name="active"               value="true"/>
     <param name="use_scan"             value="false"/>

@@ -16,6 +16,10 @@ repositories:
     type: git
     url: https://github.com/iris-ua/iris_lama_ros
 
+  point_cloud_converter:
+    type: git
+    url: https://github.com/pal-robotics-forks/point_cloud_converter
+
   occupancy_grid_python:
     type: git
-    url: https://github.com/harmony-eu/occupancy_grid_python
+    url: git@github.com:harmony-eu/occupancy_grid_python
