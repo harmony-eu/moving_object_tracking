@@ -15,3 +15,7 @@ repositories:
   iris_lama_ros:
     type: git
     url: https://github.com/iris-ua/iris_lama_ros
+
+  occupancy_grid_python:
+    type: git
+    url: https://github.com/harmony-eu/occupancy_grid_python
