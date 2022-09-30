@@ -8,6 +8,7 @@ The harmony package developed for dynamic obstacle velocity estimation. This bra
 - Run `rosdep update`
 - Run `sudo apt install python3-vcstool`
 - From the src folder of your catkin workspace, run `vcs import --recursive --input moving_object_tracking/harmony.repos`
+- `catkin build` your workspace and source it
 
 ## Usage
 
