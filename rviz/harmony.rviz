@@ -6,9 +6,9 @@ Panels:
       Expanded:
         - /TF1/Frames1
         - /TF1/Tree1
-        - /Obstacles1/Status1
+        - /RawScan1
       Splitter Ratio: 0.5088235139846802
-    Tree Height: 836
+    Tree Height: 719
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -24,7 +24,6 @@ Panels:
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz/Time
-    Experimental: false
     Name: Time
     SyncMode: 0
     SyncSource: RawScan
@@ -78,52 +77,173 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        axle_link:
+        flir_back_link:
           Value: true
-        base_link:
+        flir_left_link:
           Value: true
-        chassis_link:
+        flir_right_link:
           Value: true
-        front_cover_link:
+        kinect_master_camera_base:
           Value: true
-        front_laser:
+        kinect_master_camera_body:
           Value: true
-        front_left_wheel_link:
+        kinect_master_camera_visor:
           Value: true
-        front_lights_link:
+        kinect_master_depth_camera_link:
           Value: true
-        front_right_wheel_link:
+        kinect_master_imu_link:
           Value: true
-        front_rocker_link:
+        kinect_master_rgb_camera_link:
           Value: true
-        imu_link:
+        kinect_master_rgb_camera_link_rotated:
           Value: true
-        left_side_cover_link:
+        kinect_subordinate_camera_base:
+          Value: true
+        kinect_subordinate_camera_body:
+          Value: true
+        kinect_subordinate_camera_visor:
+          Value: true
+        kinect_subordinate_imu_link:
           Value: true
         map:
           Value: true
         map_inflated:
           Value: true
-        mid_mount:
+        myumi_005_base_link:
           Value: true
-        odom:
+        myumi_005_chassis_link:
           Value: true
-        rear_cover_link:
+        myumi_005_front_laser_scanner_link:
           Value: true
-        rear_laser:
+        myumi_005_front_left_base_link:
           Value: true
-        rear_left_wheel_link:
+        myumi_005_front_left_drive_wheel_link:
           Value: true
-        rear_lights_link:
+        myumi_005_front_left_steering_link:
           Value: true
-        rear_right_wheel_link:
+        myumi_005_front_radar_link:
           Value: true
-        rear_rocker_link:
+        myumi_005_front_right_base_link:
           Value: true
-        right_side_cover_link:
+        myumi_005_front_right_drive_wheel_link:
           Value: true
-        top_link:
+        myumi_005_front_right_steering_link:
           Value: true
+        myumi_005_odom:
+          Value: true
+        myumi_005_pillar_base_link:
+          Value: true
+        myumi_005_pillar_body_link:
+          Value: true
+        myumi_005_pillar_top_link:
+          Value: true
+        myumi_005_rear_laser_scanner_link:
+          Value: true
+        myumi_005_rear_left_base_link:
+          Value: true
+        myumi_005_rear_left_drive_wheel_link:
+          Value: true
+        myumi_005_rear_left_steering_link:
+          Value: true
+        myumi_005_rear_right_base_link:
+          Value: true
+        myumi_005_rear_right_drive_wheel_link:
+          Value: true
+        myumi_005_rear_right_steering_link:
+          Value: true
+        myumi_005_yumi_base:
+          Value: true
+        myumi_005_yumi_base_link:
+          Value: true
+        myumi_005_yumi_cs_attachment_link:
+          Value: true
+        myumi_005_yumi_cs_base_link:
+          Value: true
+        myumi_005_yumi_cs_plate_link:
+          Value: true
+        myumi_005_yumi_robl_base_link:
+          Value: true
+        myumi_005_yumi_robl_flange:
+          Value: true
+        myumi_005_yumi_robl_link_1:
+          Value: true
+        myumi_005_yumi_robl_link_2:
+          Value: true
+        myumi_005_yumi_robl_link_3:
+          Value: true
+        myumi_005_yumi_robl_link_4:
+          Value: true
+        myumi_005_yumi_robl_link_5:
+          Value: true
+        myumi_005_yumi_robl_link_6:
+          Value: true
+        myumi_005_yumi_robl_link_7:
+          Value: true
+        myumi_005_yumi_robl_sg_base_link:
+          Value: true
+        myumi_005_yumi_robl_sg_camera_frame_link:
+          Value: true
+        myumi_005_yumi_robl_sg_finger_1_base_link:
+          Value: true
+        myumi_005_yumi_robl_sg_finger_1_link:
+          Value: true
+        myumi_005_yumi_robl_sg_finger_2_base_link:
+          Value: true
+        myumi_005_yumi_robl_sg_finger_2_link:
+          Value: true
+        myumi_005_yumi_robl_sg_fingers_frame_link:
+          Value: true
+        myumi_005_yumi_robl_sg_servo_frame_link:
+          Value: true
+        myumi_005_yumi_robl_sg_vacuum_1_frame_link:
+          Value: true
+        myumi_005_yumi_robl_sg_vacuum_2_frame_link:
+          Value: true
+        myumi_005_yumi_robl_tool0:
+          Value: true
+        myumi_005_yumi_robr_base_link:
+          Value: true
+        myumi_005_yumi_robr_flange:
+          Value: true
+        myumi_005_yumi_robr_link_1:
+          Value: true
+        myumi_005_yumi_robr_link_2:
+          Value: true
+        myumi_005_yumi_robr_link_3:
+          Value: true
+        myumi_005_yumi_robr_link_4:
+          Value: true
+        myumi_005_yumi_robr_link_5:
+          Value: true
+        myumi_005_yumi_robr_link_6:
+          Value: true
+        myumi_005_yumi_robr_link_7:
+          Value: true
+        myumi_005_yumi_robr_sg_base_link:
+          Value: true
+        myumi_005_yumi_robr_sg_camera_frame_link:
+          Value: true
+        myumi_005_yumi_robr_sg_finger_1_base_link:
+          Value: true
+        myumi_005_yumi_robr_sg_finger_1_link:
+          Value: true
+        myumi_005_yumi_robr_sg_finger_2_base_link:
+          Value: true
+        myumi_005_yumi_robr_sg_finger_2_link:
+          Value: true
+        myumi_005_yumi_robr_sg_fingers_frame_link:
+          Value: true
+        myumi_005_yumi_robr_sg_servo_frame_link:
+          Value: true
+        myumi_005_yumi_robr_sg_vacuum_1_frame_link:
+          Value: true
+        myumi_005_yumi_robr_sg_vacuum_2_frame_link:
+          Value: true
+        myumi_005_yumi_robr_tool0:
+          Value: true
+        t265_pose_frame:
+          Value: true
+      Marker Alpha: 1
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -132,43 +252,118 @@ Visualization Manager:
       Tree:
         map:
           map_inflated:
-            {}
-          odom:
-            base_link:
-              chassis_link:
-                axle_link:
-                  front_rocker_link:
-                    front_left_wheel_link:
+            myumi_005_odom:
+              myumi_005_base_link:
+                myumi_005_chassis_link:
+                  myumi_005_front_laser_scanner_link:
+                    {}
+                  myumi_005_front_left_base_link:
+                    myumi_005_front_left_steering_link:
+                      myumi_005_front_left_drive_wheel_link:
+                        {}
+                  myumi_005_front_radar_link:
+                    {}
+                  myumi_005_front_right_base_link:
+                    myumi_005_front_right_steering_link:
+                      myumi_005_front_right_drive_wheel_link:
+                        {}
+                  myumi_005_pillar_base_link:
+                    myumi_005_pillar_body_link:
+                      myumi_005_pillar_top_link:
+                        myumi_005_yumi_base_link:
+                          myumi_005_yumi_base:
+                            {}
+                          myumi_005_yumi_cs_base_link:
+                            myumi_005_yumi_cs_plate_link:
+                              myumi_005_yumi_cs_attachment_link:
+                                {}
+                          myumi_005_yumi_robl_base_link:
+                            myumi_005_yumi_robl_link_1:
+                              myumi_005_yumi_robl_link_2:
+                                myumi_005_yumi_robl_link_3:
+                                  myumi_005_yumi_robl_link_4:
+                                    myumi_005_yumi_robl_link_5:
+                                      myumi_005_yumi_robl_link_6:
+                                        myumi_005_yumi_robl_link_7:
+                                          myumi_005_yumi_robl_flange:
+                                            myumi_005_yumi_robl_tool0:
+                                              myumi_005_yumi_robl_sg_base_link:
+                                                myumi_005_yumi_robl_sg_camera_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robl_sg_finger_1_base_link:
+                                                  myumi_005_yumi_robl_sg_finger_1_link:
+                                                    {}
+                                                myumi_005_yumi_robl_sg_finger_2_base_link:
+                                                  myumi_005_yumi_robl_sg_finger_2_link:
+                                                    {}
+                                                myumi_005_yumi_robl_sg_fingers_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robl_sg_servo_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robl_sg_vacuum_1_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robl_sg_vacuum_2_frame_link:
+                                                  {}
+                          myumi_005_yumi_robr_base_link:
+                            myumi_005_yumi_robr_link_1:
+                              myumi_005_yumi_robr_link_2:
+                                myumi_005_yumi_robr_link_3:
+                                  myumi_005_yumi_robr_link_4:
+                                    myumi_005_yumi_robr_link_5:
+                                      myumi_005_yumi_robr_link_6:
+                                        myumi_005_yumi_robr_link_7:
+                                          myumi_005_yumi_robr_flange:
+                                            myumi_005_yumi_robr_tool0:
+                                              myumi_005_yumi_robr_sg_base_link:
+                                                myumi_005_yumi_robr_sg_camera_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robr_sg_finger_1_base_link:
+                                                  myumi_005_yumi_robr_sg_finger_1_link:
+                                                    {}
+                                                myumi_005_yumi_robr_sg_finger_2_base_link:
+                                                  myumi_005_yumi_robr_sg_finger_2_link:
+                                                    {}
+                                                myumi_005_yumi_robr_sg_fingers_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robr_sg_servo_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robr_sg_vacuum_1_frame_link:
+                                                  {}
+                                                myumi_005_yumi_robr_sg_vacuum_2_frame_link:
+                                                  {}
+                  myumi_005_rear_laser_scanner_link:
+                    {}
+                  myumi_005_rear_left_base_link:
+                    myumi_005_rear_left_steering_link:
+                      myumi_005_rear_left_drive_wheel_link:
+                        {}
+                  myumi_005_rear_right_base_link:
+                    myumi_005_rear_right_steering_link:
+                      myumi_005_rear_right_drive_wheel_link:
+                        {}
+                t265_pose_frame:
+                  kinect_subordinate_camera_base:
+                    kinect_subordinate_camera_body:
                       {}
-                    front_right_wheel_link:
+                    kinect_subordinate_camera_visor:
                       {}
-                  rear_rocker_link:
-                    rear_left_wheel_link:
-                      {}
-                    rear_right_wheel_link:
-                      {}
-                front_cover_link:
-                  {}
-                front_laser:
-                  {}
-                front_lights_link:
-                  {}
-                imu_link:
-                  {}
-                left_side_cover_link:
-                  {}
-                rear_cover_link:
-                  {}
-                rear_laser:
-                  {}
-                rear_lights_link:
-                  {}
-                right_side_cover_link:
-                  {}
-                top_link:
-                  {}
-              mid_mount:
-                {}
+                    kinect_subordinate_imu_link:
+                      kinect_master_camera_base:
+                        kinect_master_camera_body:
+                          {}
+                        kinect_master_camera_visor:
+                          {}
+                        kinect_master_depth_camera_link:
+                          kinect_master_imu_link:
+                            flir_back_link:
+                              {}
+                            flir_left_link:
+                              {}
+                            flir_right_link:
+                              {}
+                          kinect_master_rgb_camera_link:
+                            kinect_master_rgb_camera_link_rotated:
+                              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -194,7 +389,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Flat Squares
-      Topic: /merged_scan
+      Topic: /scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -233,6 +428,7 @@ Visualization Manager:
       Margin color: 0; 170; 0
       Name: Obstacles
       Opacity: 0.75
+      Queue Size: 10
       Segments color: 170; 170; 0
       Segments thickness: 0.029999999329447746
       Topic: /obstacles
@@ -275,19 +471,18 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 151.7863006591797
+      Scale: 133.5719451904297
       Target Frame: <Fixed Frame>
-      Value: TopDownOrtho (rviz)
       X: 1.1134157180786133
       Y: -1.278123378753662
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1136
+  Height: 1016
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000156000003d0fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003e000003d0000000ca00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000003d0fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003e000003d0000000a600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007290000003efc0100000002fb0000000800540069006d0065010000000000000729000002b900fffffffb0000000800540069006d00650100000000000004500000000000000000000004b8000003d000000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001560000035afc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d0000035a000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000035afc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d0000035a000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007380000003efc0100000002fb0000000800540069006d0065010000000000000738000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000004c70000035a00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -296,6 +491,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1833
-  X: 67
+  Width: 1848
+  X: 72
   Y: 27

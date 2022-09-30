@@ -9,7 +9,13 @@
         name="map_server_inflated_broadcaster"
         args="0 0 0 0 0 0 map map_inflated 100" />
 
-    <node name="loc2d_ros" type="loc2d_ros" pkg="iris_lama_ros" output="screen" args="scan:=/merged_scan">
+   <!-- At ABB, we will use Bonns localization. To use with the test bag that doesn't contain the odom topic, uncomment this fake, fixed localization. -->
+    <!-- <node pkg="tf"
+        type="static_transform_publisher"
+        name="fake_localization"
+        args="0 0 0 0 0 0 map_inflated myumi_005_odom 100" /> -->
+
+    <!-- <node name="loc2d_ros" type="loc2d_ros" pkg="iris_lama_ros" output="screen" args="scan:=/scan">
         <param name="use_map_topic" value="true"/>
-    </node>
+    </node> -->
 </launch>
