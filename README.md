@@ -21,12 +21,6 @@ The harmony package developed for dynamic obstacle velocity estimation. This bra
 
 ## Debugging
 
- sudo apt-get install ros-noetic-map-server
-
- git clone git@github.com:awesomebytes/occupancy_grid_python.git
-
- export PYTHONPATH=$PYTHONPATH::/home/harmony_asl/catkin_workspaces/tracking_ws/src/occupancy_grid_python/src/occupancy_grid_python
-
-to run with rosbag:
-rosbag play 20220923_abb_image_dataset.bag --clock
-rosparam set use_sim_time True
+- If map server is missing: `sudo apt-get install ros-noetic-map-server`
+- If python path error occurs: `export PYTHONPATH=$PYTHONPATH:YOUR_CATKIN_WS/src/occupancy_grid_python/src/occupancy_grid_python`
+- If you test it with a rosbag, make sure to enable the `--clock` flag when you play the bag, and run `rosparam set use_sim_time True`
