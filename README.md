@@ -12,13 +12,17 @@ The harmony package developed for dynamic obstacle velocity estimation. This bra
 
 ## Usage
 
+If you dont have a map yet:
 - Create a map using `mapping.launch`
 - Save the map using `map_saver` in `map_server` (ensure the `/map` topic is saved)
 - Dilate/inflate the map around static obstacles (plus some margin) using a painting program, e. g. `Krita`
-- Ensure the modified map is loaded
-- Run `localization.launch`, give an initial ICP estimate
+
+If you have already created an inflated map:
+- Make sure that some localization framework is running
+- Run `inflated_map.launch`
 - Run `tracking.launch`
 - Enjoy!
+- For visualization: rviz -d `obstacle_detector/resources/obstacle_detector.rviz` and `rviz -d moving_object_tracking/rviz/harmony.rviz`
 
 ## Debugging
 
