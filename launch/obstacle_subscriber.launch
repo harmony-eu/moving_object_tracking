@@ -1,0 +1,4 @@
+<launch>
+    <node name="obstacle_subscriber" pkg="moving_object_tracking" type="obstacle_subscriber.py" output="screen">
+    </node>
+</launch>
