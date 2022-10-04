@@ -1,6 +1,6 @@
 <launch>
-    <node name="map_server" type="map_server" pkg="map_server" output="screen" args="$(find harmony)/maps/map.yaml"/>
-    <node name="map_server_inflated" type="map_server" pkg="map_server" output="screen" args="$(find harmony)/maps/map_edited.yaml">
+    <!-- <node name="map_server" type="map_server" pkg="map_server" output="screen" args="$(find moving_object_tracking)/maps/map.yaml"/> -->
+    <node name="map_server_inflated" type="map_server" pkg="map_server" output="screen" args="$(find moving_object_tracking)/maps/map_edited.yaml">
         <remap from="/map" to="/map_inflated"/>
         <param name="frame_id" value="map_inflated"/>
     </node>

@@ -6,6 +6,16 @@
   </node>
 
   <arg name="manager" doc="Name of the nodelet manager" default="nodelet_manager"/>
+  
+  <!-- Publish the inflated map -->
+  <node name="map_server_inflated" type="map_server" pkg="map_server" output="screen" args="$(find moving_object_tracking)/maps/map_edited.yaml">
+      <remap from="/map" to="/map_inflated"/>
+      <param name="frame_id" value="map_inflated"/>
+  </node>
+  <node pkg="tf"
+      type="static_transform_publisher"
+      name="map_server_inflated_broadcaster"
+      args="0 0 0 0 0 0 map map_inflated 500" />
 
   <!--node name="map_to_scanner_base" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 map robot"/-->
 

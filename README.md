@@ -1,4 +1,4 @@
-# Harmony
+# Moving object tracking
 
 The harmony package developed for dynamic obstacle velocity estimation. This branch was used on ROS Noetic, Ubuntu 20.04.
 
@@ -19,8 +19,7 @@ If you dont have a map yet:
 
 If you have already created an inflated map:
 - Make sure that some localization framework is running
-- Run `inflated_map.launch`
-- Run `tracking.launch`
+- Run `roslaunch moving_object_tracking tracking.launch`
 - Enjoy!
 - For visualization: rviz -d `obstacle_detector/resources/obstacle_detector.rviz` and `rviz -d moving_object_tracking/rviz/harmony.rviz`
 
