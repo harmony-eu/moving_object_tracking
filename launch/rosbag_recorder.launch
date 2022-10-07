@@ -1,0 +1,12 @@
+  
+<!-- Launch file to record a ros bag -->
+<launch>
+    <!-- Output name of the recorded rosbag -->
+    <arg name="output_path" />
+    <!-- Rosbag recoder -->
+    <node name="rosbag_recorder"
+        pkg="rosbag"
+        type="record"
+        args="-o $(arg output_path) /obstacles /myumi_005/base/state_controller/odom /NMCLPose /ScanMergeNode/scan_merged /scan_filtered /jackal/goal /myumi_005/joy /costmap_node/costmap/costmap /map /map_inflated /myumi_005/base/twist_controller/cmd_vel /jackal/collision_space /jackal/ped_cv_predictions /jackal/free_space /jackal/obstacles/1 /jackal/obstacles/2 /jackal/obstacles/3 /jackal/obstacles/4 /jackal/obstacles/plane /jackal/free_space/plane /goal/global_goal /lmpcc/visuals /tf /tf_static"
+    />
+</launch>
