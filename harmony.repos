@@ -7,11 +7,14 @@ repositories:
   laser_static_map_filter:
     type: git
     url: https://github.com/jk-ethz/laser_static_map_filter
+    version: development
 
   iris_lama:
     type: git
     url: https://github.com/iris-ua/iris_lama
+    version: d1a75d94eaaf2dae393e33acfbf1ff2eb22d1d91
 
   iris_lama_ros:
     type: git
-    url: https://github.com/iris-ua/iris_lama_ros
+    url: https://github.com/TechnoYantra/iris_lama_ros.git
+    version: 7933be75e7d05bef704f7213182ad0976c2810fe
