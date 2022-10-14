@@ -6,7 +6,7 @@ The harmony package developed for dynamic obstacle velocity estimation.
 
 - Run `rosdep update`
 - Run `sudo apt install python3-vcstool`
-- Run `vcs import --recursive --input harmony.repos`
+- Run `vcs import --recursive --input ./moving_object_tracking/harmony.repos`
 
 ## Usage
 
