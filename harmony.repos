@@ -1,13 +1,13 @@
 repositories:
   scan_merger_2:
     type: git
-    url: git@github.com:giuschio/static_map_filter_2.git
+    url: git@github.com:giuschio/scan_merger_2.git
     version: 4279573e15171c326e71866c7ecc1320a187cff6
 
   obstacle_detector_2:
     type: git
     url: git@github.com:giuschio/obstacle_detector_2.git
-    version: ad8127597a9b7e43a446eb641753a86be22c5b0a
+    version: 64a223cbec75ebc2b43da6908dedf95c562ecbf4
 
   laser_static_map_filter:
     type: git
