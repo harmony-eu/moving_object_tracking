@@ -1,13 +1,18 @@
 repositories:
-  obstacle_detector:
+  scan_merger_2:
     type: git
-    url: https://github.com/jk-ethz/obstacle_detector
-    version: development
+    url: git@github.com:giuschio/static_map_filter_2.git
+    version: 4279573e15171c326e71866c7ecc1320a187cff6
+
+  obstacle_detector_2:
+    type: git
+    url: git@github.com:giuschio/obstacle_detector_2.git
+    version: ad8127597a9b7e43a446eb641753a86be22c5b0a
 
   laser_static_map_filter:
     type: git
-    url: https://github.com/jk-ethz/laser_static_map_filter
-    version: development
+    url: git@github.com:harmony-eu/static_map_filter_2.git
+    version: 882d24ccd0de60c2f5d805754bb3aac4800f5c07
 
   iris_lama:
     type: git
