@@ -2,17 +2,17 @@ repositories:
   scan_merger_2:
     type: git
     url: git@github.com:giuschio/scan_merger_2.git
-    version: 4279573e15171c326e71866c7ecc1320a187cff6
+    version: humble-devel
 
   obstacle_detector_2:
     type: git
     url: git@github.com:giuschio/obstacle_detector_2.git
-    version: 64a223cbec75ebc2b43da6908dedf95c562ecbf4
+    version: humble-devel
 
   laser_static_map_filter:
     type: git
     url: git@github.com:harmony-eu/static_map_filter_2.git
-    version: 882d24ccd0de60c2f5d805754bb3aac4800f5c07
+    version: humble-devel
 
   iris_lama:
     type: git
@@ -23,3 +23,13 @@ repositories:
     type: git
     url: https://github.com/TechnoYantra/iris_lama_ros.git
     version: 7933be75e7d05bef704f7213182ad0976c2810fe
+
+  yolo_eth:
+    type: git
+    url: git@github.com:harmony-eu/yolo_eth.git
+    version: humble-devel
+
+  semantic_obstacle_tracking:
+    type: git
+    url: git@github.com:harmony-eu/semantic_obstacle_tracking.git
+    version: humble-devel

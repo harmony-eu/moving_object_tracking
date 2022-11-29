@@ -18,35 +18,34 @@ import launch_ros.actions
 
 from launch import LaunchDescription
 
-
 def generate_launch_description():
     # Parameters
     node_output = 'screen'
 
-    laser_scan_merger = launch_ros.actions.Node(
-            package='laser_scan_merger',
-            executable='scans_merger_node',
-            output = node_output,
-            name='scans_merger',
-            remappings=[
-               ('/front_scan', '/front/scan'),
-               ('/rear_scan', '/rear/scan'),
-               ('/pcl', '/merged_pcl_2'),
-            ],
-            parameters=[
-                {'active': True},
-                {'publish_scan': False},
-                {'publish_pcl2': True},
-                {'ranges_num': 1000},
-                {'min_scanner_range': 0.05},
-                {'max_scanner_range': 10.0},
-                {'min_x_range': -10.0},
-                {'max_x_range': 10.0},
-                {'min_y_range': -10.0},
-                {'max_y_range': 10.0},
-                {'fixed_frame_id':'map'},
-                {'target_frame_id':'map'},
-            ])
+    # laser_scan_merger = launch_ros.actions.Node(
+    #         package='laser_scan_merger',
+    #         executable='scans_merger_node',
+    #         output = node_output,
+    #         name='scans_merger',
+    #         remappings=[
+    #            ('/front_scan', '/front/scan'),
+    #            ('/rear_scan', '/rear/scan'),
+    #            ('/pcl', '/merged_pcl_2'),
+    #         ],
+    #         parameters=[
+    #             {'active': True},
+    #             {'publish_scan': False},
+    #             {'publish_pcl2': True},
+    #             {'ranges_num': 1000},
+    #             {'min_scanner_range': 0.05},
+    #             {'max_scanner_range': 10.0},
+    #             {'min_x_range': -10.0},
+    #             {'max_x_range': 10.0},
+    #             {'min_y_range': -10.0},
+    #             {'max_y_range': 10.0},
+    #             {'fixed_frame_id':'map'},
+    #             {'target_frame_id':'map'},
+    #         ])
 
     # Nodes launching commands
     static_map_filter = launch_ros.actions.Node(
@@ -54,10 +53,11 @@ def generate_launch_description():
             namespace='',
             executable='laser_static_map_filter',
             name='laser_static_map_filter',
+            parameters=[{'nmcl': True}],
             remappings=[('/map', '/map_inflated'),
                         ('/map_updates', '/map_inflated_updates'),
                         ('/map_server/map', '/map_server_inflated/map'),
-                        ('/scan', '/merged_pcl_2'),
+                        ('/scan', '/scan_merged'),
                         ('/scan_filtered', '/scan_filtered_2'),]
         )
 
@@ -90,6 +90,16 @@ def generate_launch_description():
                 {'max_circle_radius': 0.6},
                 {'radius_enlargement': 0.3},
                 {'frame_id':'map'},
+
+                # {'min_group_points': 8},
+                # {'max_group_distance': 0.4},
+                # {'distance_proportion': 0.00628},
+                # {'max_split_distance': 0.1},
+                # {'max_merge_separation': 0.1},
+                # {'max_merge_spread': 0.1},
+                # {'max_circle_radius': 0.3},
+                # {'radius_enlargement': 0.1},
+                # {'frame_id':'map'},
             ])
 
     obstacle_tracker = launch_ros.actions.Node(
@@ -118,7 +128,7 @@ def generate_launch_description():
   
     ld = LaunchDescription()
 
-    ld.add_action(laser_scan_merger)
+    # ld.add_action(laser_scan_merger)
     ld.add_action(static_map_filter)
     ld.add_action(obstacle_extractor)
     ld.add_action(obstacle_tracker)
