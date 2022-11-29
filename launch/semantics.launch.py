@@ -66,6 +66,15 @@ def generate_launch_description():
         parameters=[
             {'cameras': cameras},
             {'camera_links': camera_links},
+            # see semantic_tracking repo for explanation of arguments
+            {'image_floor_margin': 0.9},
+            {'intersection_threshold': 0.5},
+            {'lidar_height': 0.32},
+            {'image_plane_threshold': 0.3},
+            {'yolo_pixel_confidence_margin': 20},
+            {'debug_vis_projection': False},
+            {'rectified_input': False},
+
         ],
         remappings=[
             ('yolov5', 'yolo/yolo_eth_ros/detections'),
