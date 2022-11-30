@@ -69,9 +69,8 @@ def generate_launch_description():
             # see semantic_tracking repo for explanation of arguments
             {'image_floor_margin': 0.9},
             {'intersection_threshold': 0.5},
-            # value < -1000 to tell the node not to overwrite the z-coordinate of obstacles
-            # and instead use the z in the message
-            {'lidar_height': -2000},
+            # need to overwrite lidar_height (wrt obstacle pointcloud frame)
+            {'lidar_height': 0.32},
             {'image_plane_threshold': 0.3},
             {'yolo_pixel_confidence_margin': 20},
             {'debug_vis_projection': False},
