@@ -17,17 +17,24 @@
 import launch_ros.actions
 
 from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument as LA
+from launch.conditions import IfCondition, UnlessCondition
+from launch.substitutions import LaunchConfiguration as LC
 
 
 def generate_launch_description():
     # Parameters
     node_output = 'screen'
 
+    nmcl_input = LA('nmcl_input', default_value='false')
+
+    # activated unless using nmcl_input
     laser_scan_merger = launch_ros.actions.Node(
             package='laser_scan_merger',
             executable='scans_merger_node',
             output = node_output,
             name='scans_merger',
+            condition=UnlessCondition(LC('nmcl_input')),
             remappings=[
                ('/front_scan', '/front/scan'),
                ('/rear_scan', '/rear/scan'),
@@ -49,15 +56,32 @@ def generate_launch_description():
             ])
 
     # Nodes launching commands
+    # activated unless using nmcl_input
     static_map_filter = launch_ros.actions.Node(
             package='laser_static_map_filter',
             namespace='',
             executable='laser_static_map_filter',
             name='laser_static_map_filter',
+            condition=UnlessCondition(LC('nmcl_input')),
             remappings=[('/map', '/map_inflated'),
                         ('/map_updates', '/map_inflated_updates'),
                         ('/map_server/map', '/map_server_inflated/map'),
                         ('/scan', '/merged_pcl_2'),
+                        ('/scan_filtered', '/scan_filtered_2'),]
+        )
+
+    # if using nmcl_input, this is the static filter (some params and topics change)
+    static_map_filter_nmcl = launch_ros.actions.Node(
+            package='laser_static_map_filter',
+            namespace='',
+            executable='laser_static_map_filter',
+            name='laser_static_map_filter',
+            condition=IfCondition(LC('nmcl_input')),
+            parameters=[{'nmcl': True}],
+            remappings=[('/map', '/map_inflated'),
+                        ('/map_updates', '/map_inflated_updates'),
+                        ('/map_server/map', '/map_server_inflated/map'),
+                        ('/scan', '/scan_merged'),
                         ('/scan_filtered', '/scan_filtered_2'),]
         )
 
@@ -81,8 +105,8 @@ def generate_launch_description():
                 {'discard_converted_segments': True},
                 {'transform_coordinates': True},
 
-                {'min_group_points': 10},
-                {'max_group_distance': 0.1},
+                {'min_group_points': 5},
+                {'max_group_distance': 0.4},
                 {'distance_proportion': 0.00628},
                 {'max_split_distance': 0.2},
                 {'max_merge_separation': 0.2},
@@ -90,6 +114,16 @@ def generate_launch_description():
                 {'max_circle_radius': 0.6},
                 {'radius_enlargement': 0.3},
                 {'frame_id':'map'},
+
+                # {'min_group_points': 8},
+                # {'max_group_distance': 0.4},
+                # {'distance_proportion': 0.00628},
+                # {'max_split_distance': 0.1},
+                # {'max_merge_separation': 0.1},
+                # {'max_merge_spread': 0.1},
+                # {'max_circle_radius': 0.3},
+                # {'radius_enlargement': 0.1},
+                # {'frame_id':'map'},
             ])
 
     obstacle_tracker = launch_ros.actions.Node(
@@ -117,9 +151,10 @@ def generate_launch_description():
             ])
   
     ld = LaunchDescription()
-
+    ld.add_action(nmcl_input)
     ld.add_action(laser_scan_merger)
     ld.add_action(static_map_filter)
+    ld.add_action(static_map_filter_nmcl)
     ld.add_action(obstacle_extractor)
     ld.add_action(obstacle_tracker)
     return ld

@@ -20,12 +20,20 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import PathJoinSubstitution
+from launch.actions import DeclareLaunchArgument as LA
+from launch.substitutions import LaunchConfiguration as LC
 
 
 def generate_launch_description():
     largs = list()
 
+    lidar_height = LA('lidar_height', default_value='-2000.0')
+
     yolo_input_topics = str([
+        '/kinect_master/rgb_rotated_rectified/image_raw',
+        # TODO: The current YOLO model is trained on distorted images
+        #       Should be trained on rectified images
+        #       Then these topics would be /multicam/back/image_rect
         '/multicam/back/image_color/compressed',
         '/multicam/left/image_color/compressed',
         '/multicam/right/image_color/compressed'
@@ -35,11 +43,21 @@ def generate_launch_description():
     yolo_data = 'models/abb_model.yaml'
 
     cameras = [
+        '/kinect_master/rgb_rotated',
         '/multicam/back',
         '/multicam/right',
         '/multicam/left'
     ]
+
+    debug_topics = [
+        'none',
+        # '/kinect_master/rgb_rotated_rectified/image_raw',
+        # '/multicam/back/image_color/compressed',
+        # '/multicam/right/image_color/compressed',
+        # '/multicam/left/image_color/compressed',
+    ]
     camera_links = [
+        'kinect_master_rgb_camera_link_rotated',
         'flir_back_link',
         'flir_right_link',
         'flir_left_link'
@@ -57,6 +75,7 @@ def generate_launch_description():
     largs.append(node_yolo)
 
     # --- SEMANTIC TRACKING NODE
+    largs.append(lidar_height)
     
     node_semantics = Node(
         package='semantic_tracking',
@@ -71,10 +90,10 @@ def generate_launch_description():
             {'intersection_threshold': 0.5},
             # value < -1000 to tell the node not to overwrite the z-coordinate of obstacles
             # and instead use the z in the message
-            {'lidar_height': -2000},
+            {'lidar_height': LC('lidar_height')},
             {'image_plane_threshold': 0.3},
             {'yolo_pixel_confidence_margin': 20},
-            {'debug_vis_projection': False},
+            {'debug_topics': debug_topics},
             {'rectified_input': False},
 
         ],

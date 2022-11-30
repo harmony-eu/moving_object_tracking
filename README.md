@@ -25,3 +25,6 @@
 
 ## Notes
 The ROS1 version of this package also had launch files for mapping and localization. Those were not ported (localization is ported but untested and commented-out).
+
+
+If some TF camera links are missing, you can use the `tf_utils.launch.py` file to launch a static TF broadcaster. 
