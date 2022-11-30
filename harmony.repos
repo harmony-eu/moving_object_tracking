@@ -26,7 +26,7 @@ repositories:
 
   yolo_eth:
     type: git
-    url: git@github.com:harmony-eu/yolo_eth.git
+    url: git@github.com:harmony-eu/yolo_semantic_obstacle_tracking.git
     version: humble-devel
 
   semantic_obstacle_tracking:
