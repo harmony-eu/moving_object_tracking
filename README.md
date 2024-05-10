@@ -5,9 +5,10 @@
 
 ## Installation
 
+- Run `git clone git@github.com:harmony-eu/moving_object_tracking.git` and `cd moving_object_tracking`
 - Run `rosdep update`
 - Run `sudo apt install python3-vcstool`
-- Run `vcs import --recursive --input ./moving_object_tracking/harmony.repos`
+- Run `vcs import --recursive --input harmony.repos`
 - The `yolo_eth` repo needs some further installation steps, see [https://github.com/harmony-eu/yolo_eth/tree/humble-devel](https://github.com/harmony-eu/yolo_eth/tree/humble-devel).
 
 ## Usage
