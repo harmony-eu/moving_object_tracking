@@ -9,7 +9,7 @@
 - Run `rosdep update`
 - Run `sudo apt install python3-vcstool`
 - Run `vcs import --recursive --input harmony.repos`
-- If semantic_tracking is desired: The `yolo_eth` repo needs some further installation steps, see [https://github.com/harmony-eu/yolo_eth/tree/humble-devel](https://github.com/harmony-eu/yolo_eth/tree/humble-devel).
+- (Optional, if semantic_tracking is desired): The `yolo_eth` repo needs some further installation steps, see [https://github.com/harmony-eu/yolo_eth/tree/humble-devel](https://github.com/harmony-eu/yolo_eth/tree/humble-devel).
 
 ## Usage
 <!-- - Create a map using `mapping.launch` -->
