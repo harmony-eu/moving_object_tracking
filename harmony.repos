@@ -1,12 +1,12 @@
 repositories:
   scan_merger_2:
     type: git
-    url: git@github.com:giuschio/scan_merger_2.git
+    url: git@github.com:harmony-eu/scan_merger_2.git
     version: humble-devel
 
   obstacle_detector_2:
     type: git
-    url: git@github.com:giuschio/obstacle_detector_2.git
+    url: git@github.com:harmony-eu/obstacle_detector_2.git
     version: humble-devel
 
   laser_static_map_filter:
